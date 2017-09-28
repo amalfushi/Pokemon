@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- remove src if you want to work here -->
+    <script type="text/javascript">
+    $(document).ready(function(){
+        //this works but broke the api
+        for(var i=1; i<11; i++){
+            $.ajax({
+            method: 'GET',
+            url: 'https://pokeapi.co/api/v2/pokemon',
+            success: function(res) {
+                console.log(res);
+                var pic = (res['sprites']['front_default']);
+                $('#wrapper').append('<img src="' + pic + '" alt="">');
+                }
+            });
+
+        // var dex = $.get("https://pokeapi.co/api/v2/", function(res){
+        //     console.log(res['pokemon']);
+        //     console.log("1");
+        // });
+        
+        }
+    });
+    </script> 
+</head>
+<body>
+    <div id="wrapper">
+        
+    </div>
+</body>
+</html>
