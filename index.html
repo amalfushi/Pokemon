@@ -9,23 +9,19 @@
 <!-- remove src if you want to work here -->
     <script type="text/javascript">
     $(document).ready(function(){
-        //this works but broke the api
-        for(var i=1; i<11; i++){
-            $.ajax({
-            method: 'GET',
-            url: 'https://pokeapi.co/api/v2/pokemon/'+i+'/',
-            success: function(res) {
-                console.log(res);
-                var pic = (res['sprites']['front_default']);
-                $('#wrapper').append('<img src="' + pic + '" alt="">');
-                }
-            });
-
-        // var dex = $.get("https://pokeapi.co/api/v2/", function(res){
-        //     console.log(res['pokemon']);
-        //     console.log("1");
-        // });
         
+        for(var i=1; i<722; i++){
+        //this works but maxes out api requests
+            // $.ajax({
+            // method: 'GET',
+            // url: 'https://pokeapi.co/api/v2/pokemon/'+i+'/',
+            // success: function(res) {
+            //     console.log(res);
+            //     var pic = (res['sprites']['front_default']);
+            //     $('#wrapper').append('<img src="' + pic + '" alt="">');
+            //     }
+            // });
+            $('#wrapper').append("<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png' alt=''>");
         }
     });
     </script> 
